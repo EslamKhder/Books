@@ -75,6 +75,22 @@ export class SignupComponent implements OnInit {
   }
 
   done() {
+    if(!this.checkoutParentGroup.controls['user'].value.email) {
+      alert("email is mandatory")
+      return
+    }
+    if(!this.checkoutParentGroup.controls['user'].value.password) {
+      alert("password is mandatory")
+      return
+    }
+    if(!this.checkoutParentGroup.controls['user'].value.firstName) {
+      alert("firstName is mandatory")
+      return
+    }
+    if(!this.checkoutParentGroup.controls['user'].value.secondName) {
+      alert("secondName is mandatory")
+      return
+    }
     if (this.checkoutParentGroup.controls['user'].value.password !== this.checkoutParentGroup.controls['user'].value.confirmPassword) {
       alert("Password not matched !?")
       return

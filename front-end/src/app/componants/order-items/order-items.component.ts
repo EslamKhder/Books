@@ -95,4 +95,8 @@ export class OrderItemsComponent implements OnInit {
     const cartorder = new CartOrder(temp);
     this.cartService.addOrderToCart(cartorder)
   }
+
+  getAdm() {
+    return sessionStorage.getItem("admin") == "1";
+  }
 }

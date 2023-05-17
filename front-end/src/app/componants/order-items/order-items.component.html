@@ -1,5 +1,9 @@
 <app-search-order></app-search-order>
+<li  *ngIf="getAdm()" class="menu-item PRI">
+  <a routerLink="/acc">my account</a>
+</li>
 <section class="section-margin">
+
   <div class="container">
     <div class="section-title section-title--bordered">
       <h2>books</h2>
@@ -17,6 +21,7 @@
                   {&quot;breakpoint&quot;:575, &quot;settings&quot;: {&quot;slidesToShow&quot;: 1} },
                   {&quot;breakpoint&quot;:490, &quot;settings&quot;: {&quot;slidesToShow&quot;: 1} }
                   ]">
+
       <div class="slick-list draggable">
         <div class="slick-track" style="opacity: 1; width: 1113px; transform: translate3d(0px, 0px, 0px);">
           <div *ngFor="let temp of orders" class="slick-slide slick-active" data-slick-index="0" aria-hidden="false" style="width: 371px;">

@@ -35,14 +35,8 @@ export class AccountComponent implements OnInit {
     this.myFormLogin()
   }
   async myFormLogin() {
-    // alert(sessionStorage.getItem("email"))
      this.auth.getData(sessionStorage.getItem("email")).subscribe(
       data => {
-        // alert(JSON.stringify(data))
-        // alert(data.sSN)
-        // alert(data.email)
-        // alert(data.password)
-        // alert(data.firstName)
         this.da = data;
 
         this.checkoutParentGroup = this.formChildGroup.group({
@@ -98,22 +92,13 @@ export class AccountComponent implements OnInit {
   }
 
   getAllReqOrder(){
-    alert("cc===> " +sessionStorage.getItem("idRO"))
       this.auth.getDataOrders(sessionStorage.getItem("idRO"),sessionStorage.getItem("email")).subscribe(
       data => {
-        alert(JSON.stringify("===> " + data))
         this.dataO = data
       }
     )
   }
   done() {
-
-    // alert(this.checkoutParentGroup.controls['user'].value.sSN)
-    // alert(this.checkoutParentGroup.controls['user'].value.email)
-    // alert(this.checkoutParentGroup.controls['user'].value.password)
-    // alert(this.checkoutParentGroup.controls['user'].value.firstName)
-    // alert(this.checkoutParentGroup.controls['user'].value.secondName)
-    // alert(this.checkoutParentGroup.controls['user'].value.birthDate)
 
     if (this.checkoutParentGroup.controls['user'].value.password !== this.checkoutParentGroup.controls['user'].value.confirmPassword) {
       alert("Password not matched !?")

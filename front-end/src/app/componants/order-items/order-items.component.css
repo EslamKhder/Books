@@ -12,3 +12,19 @@
   margin-top: -70px;
 }
 /**/
+
+.PRI
+{
+  position: absolute;
+  right: 20px;
+  top: 0;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  margin: 0;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 30px;
+  color: #222222;
+  font-weight: 600;
+  font-size: 18px;
+}
