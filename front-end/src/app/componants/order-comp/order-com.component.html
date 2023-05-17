@@ -1,0 +1,45 @@
+<section class="order-complete inner-page-sec-padding-bottom">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="order-complete-message text-center">
+          <h1>Thank you !</h1>
+          <p>Your order has been received.</p>
+        </div>
+        <ul class="order-details-list">
+          <li>Order Code: <strong>{{getCode()}}</strong></li>
+          <li>Date: <strong>{{getDate()}}</strong></li>
+          <li>Total: <strong>{{orderPrice | currency: 'POUND'}}</strong></li>
+          <li>Payment Method: <strong>Cash on Delivery</strong></li>
+        </ul>
+        <h3 class="order-table-title">Order Details</h3>
+        <div class="table-responsive">
+          <table class="table order-details-table">
+            <thead>
+            <tr>
+              <th>Product</th>
+              <th>Total</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let temp of orderss">
+              <td><a href="single-product.html">{{temp.name}}</a> <strong> × {{temp.quantity}}</strong></td>
+              <td><span>{{totalPrice | currency: 'POUND'}}</span></td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+              <th>Payment Method:</th>
+              <td>Cash on Delivery</td>
+            </tr>
+            <tr>
+              <th>Total:</th>
+              <td><span>{{orderPrice | currency: 'POUND'}}</span></td>
+            </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

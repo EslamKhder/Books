@@ -1,0 +1,70 @@
+<div class="row">
+    <div class="col-12">
+      <!-- Checkout Form s-->
+      <form (ngSubmit)="done()" class="row" [formGroup]="checkoutParentGroup">
+        <div formGroupName="data" class="checkout-form">
+        <div class="row row-40">
+          <div class="col-lg-5">
+            <div class="row">
+              <!-- Cart Total -->
+              <div class="col-12">
+                <div class="checkout-cart-total">
+                  <h2 class="checkout-title">YOUR INFORMATION</h2>
+                  <ul>
+                    <li>
+                      <span class="left">Name</span> <span class="right">
+                        <input formControlName="fullName" disabled>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="left">Phone</span> <span class="right">
+                        <input formControlName="gmail" disabled>
+                      </span>
+                    </li>
+                    <li>
+                      <span class="left">Address</span> <span class="right">
+                        <input formControlName="phone" disabled>
+                      </span>
+                    </li>
+                  </ul>
+                  <div class="method-notice mt--25">
+                    <article>
+                      <h3 class="d-none sr-only">blog-article</h3>
+                      If there is any wrong information please correct it by going to MY ACCOUNT page
+                    </article>
+                  </div>
+                  <button routerLink="/acc" class="place-order w-100" >MY ACCOUNT</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="row">
+              <!-- Cart Total -->
+              <div class="col-12">
+                <div class="checkout-cart-total">
+                  <h2 class="checkout-title">YOUR ORDER</h2>
+                  <h4>Product <span>Total</span></h4>
+                  <ul>
+                    <li *ngFor="let temp of orders"><span  class="left">{{temp.name}}</span> <span class="right">{{temp.price * temp.quantity | currency: 'POUND'}}</span></li>
+                  </ul>
+                  <h4> Total <span>{{totalPrice | currency: 'POUND'}}</span></h4>
+                  <div class="method-notice mt--25">
+                    <label for="payment-method">Payment Method :</label>
+                    <select id="payment-method">
+                      <option value="cash-on-delivery">Cash on Delivery</option>
+                      <option value="credit-card">Credit Card</option>
+                    </select>
+                  </div>
+                  <button class="place-order w-100" >Place order</button>
+<!--                  <a class="place-order w-100" routerLink="/purchases">Place order</a>-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+

@@ -1,0 +1,22 @@
+<div *ngIf="isAuthenticatedUser()" class="site-header d-none d-lg-block">
+  <div class="header-bottom pb--10">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <div class="col-lg-5">
+          <div class="header-search-block">
+            <input #key type="text" placeholder="Search entire store here">
+            <button (click)="doSearch(key.value)">Search</button>
+          </div>
+        </div>
+        <div class="col-lg-4">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button routerLink="/login" *ngIf="!isAuthenticatedUser()" class="log btn btn-outline-primary">Login</button>
+<button (click)="logOut()" *ngIf="isAuthenticatedUser()" class="log btn btn-outline-danger">Logout</button>
+<a routerLink="/addbook" *ngIf="isAdmin()" class="spc btn btn-outline-danger">Add BOOK</a>
